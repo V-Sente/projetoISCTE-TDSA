@@ -18,6 +18,8 @@ from dj_database_url import parse as dburl
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -46,8 +48,9 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "index.apps.ClientesConfig",
+    "index.apps.IndexConfig",
     "clientes.apps.ClientesConfig",
+    "perfis.apps.PerfisConfig",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

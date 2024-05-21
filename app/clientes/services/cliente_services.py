@@ -26,4 +26,4 @@ def editar_cliente(cliente, cliente_novo):
     cliente.data_nascimento = cliente_novo.data_nascimento
     cliente.email = cliente_novo.email
     cliente.profissao = cliente_novo.profissao
-    cliente.save(force_update=True)  # FORÇA A ATUALIZAÇÃO DOS DADOS
+    cliente.save(force_update=True)

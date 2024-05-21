@@ -49,6 +49,21 @@ services:
     profiles:
       - tools
     command: ["python", "manage.py", "migrate"]
+
+  db-makemigrations:
+    build:
+      context: ./app
+    volumes:
+      - ./app:/app
+    networks:
+      - app-network
+    env_file:
+      - ./app/.env
+    depends_on:
+      - db
+    profiles:
+      - tools
+    command: ["python", "manage.py", "makemigrations"]
   
   collectstatic:
     build:
