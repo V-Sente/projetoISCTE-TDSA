@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+from .forms import CreateUserForm, CreateCreatorForm
 
 def index(request):
     return render(request, 'index.html')
@@ -18,13 +19,24 @@ def dashboard(request):
 
 def cadastrar_usuario(request):
     if request.method == "POST":
-        form_usuario = UserCreationForm(request.POST)
+        form_usuario = CreateUserForm(request.POST)
         if form_usuario.is_valid():
             form_usuario.save()
             return redirect('index')
     else:
-        form_usuario = UserCreationForm()
+        form_usuario = CreateUserForm()
     return render(request, 'usuarios/form_usuario.html', {"form_usuario": form_usuario})
+
+
+def cadastrar_criador(request):
+    if request.method == "POST":
+        form_criador = CreateCreatorForm(request.POST)
+        if form_criador.is_valid():
+            form_criador.save()
+            return redirect('index')
+    else:
+        form_criador = CreateCreatorForm()
+    return render(request, 'usuarios/form_criador.html', {"form_criador": form_criador})
 
 
 def logar_usuario(request):

@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-Registo de Novo User
+Registo de Novo Criador de Festas
 {% endblock titulo %}
 
 {% block conteudo %}
-<h1>Registo de User</h1>
+<h1>Registo de Criador de Festas</h1>
 <section class="h-100 gradient-form" style="background-color: #eee;">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -30,26 +30,32 @@ Registo de Novo User
 
                                     <div data-mdb-input-init class="form-outline mb-4">
                                         <label class="form-label" for="form2Example11">Nome</label>
-                                        {{form_usuario.username.errors}}
-                                        {{form_usuario.username}}
+                                        {{form_criador.username.errors}}
+                                        {{form_criador.username}}
                                     </div>
 
                                     <div data-mdb-input-init class="form-outline mb-4">
                                         <label class="form-label" for="form2Example12">Data de Nascimento</label>
-                                        {{form_usuario.data_nascimento.errors}}
-                                        {{form_usuario.data_nascimento}}
+                                        {{form_criador.data_nascimento.errors}}
+                                        {{form_criador.data_nascimento}}
                                     </div>
 
                                     <div data-mdb-input-init class="form-outline mb-4">
                                         <label class="form-label" for="form2Example13">sexo</label>
-                                        {{form_usuario.sexo.errors}}
-                                        {{form_usuario.sexo}}
+                                        {{form_criador.sexo.errors}}
+                                        {{form_criador.sexo}}
                                     </div>
 
                                     <div data-mdb-input-init class="form-outline mb-4">
                                         <label class="form-label" for="form2Example14">E-mail</label>
-                                        {{form_usuario.email.errors}}
-                                        {{form_usuario.email}}
+                                        {{form_criador.email.errors}}
+                                        {{form_criador.email}}
+                                    </div>
+
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label" for="form2Example15">Número de Telemóvel</label>
+                                        {{form_criador.n_telemovel.errors}}
+                                        {{form_criador.n_telemovel}}
                                     </div>
 
                                 </form>
@@ -61,21 +67,27 @@ Registo de Novo User
                                 <form method="post">
 
                                     <div data-mdb-input-init class="form-outline mb-4">
-                                        <label class="form-label" for="form2Example15">Número de Telemóvel</label>
-                                        {{form_usuario.n_telemovel.errors}}
-                                        {{form_usuario.n_telemovel}}
+                                        <label class="form-label" for="form2Example15">Organizacao</label>
+                                        {{form_criador.organizacao.errors}}
+                                        {{form_criador.organizacao}}
+                                    </div>
+
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label" for="form2Example15">Cargo</label>
+                                        {{form_criador.cargo.errors}}
+                                        {{form_criador.cargo}}
                                     </div>
 
                                     <div data-mdb-input-init class="form-outline mb-4">
                                         <label class="form-label" for="form2Example16">Password</label>
-                                        {{form_usuario.password1.errors}}
-                                        {{form_usuario.password1}}
+                                        {{form_criador.password1.errors}}
+                                        {{form_criador.password1}}
                                     </div>
 
                                     <div data-mdb-input-init class="form-outline mb-4">
                                         <label class="form-label" for="form2Example17">Confirmar Password</label>
-                                        {{form_usuario.password2.errors}}
-                                        {{form_usuario.password2}}
+                                        {{form_criador.password2.errors}}
+                                        {{form_criador.password2}}
                                     </div>
 
                                     <div class="text-center pt-1 mb-1 pb-1">
@@ -85,12 +97,12 @@ Registo de Novo User
                                     </div>
 
                                     <div class="text-center pt-1 mb-1 pb-1">
-                                        <p>Já tens uma conta? <a class="text-muted" href="{% url 'logar_usuario' %}">Faz login aqui!</a>
+                                        <p>Já tens uma conta? <a class="text-muted" href="{% url 'logar_usuario' %}">Faz
+                                                login aqui!</a>
                                         </p>
                                     </div>
-
                                     <div class="text-center pt-1 mb-1 pb-1">
-                                        <p>Queres ser criador de festas? <a class="text-muted" href="{% url 'cadastrar_criador' %}">Faz
+                                        <p>Não queres ser criador de festas? <a class="text-muted" href="{% url 'cadastrar_usuario' %}">Faz
                                                 o registo aqui!</a>
                                         </p>
                                     </div>
