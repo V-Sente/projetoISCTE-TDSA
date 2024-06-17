@@ -17,94 +17,39 @@ Registo de Novo Criador de Festas
                                 <img src="assets\UniFestas.png" style="width: 300px; margin-top: 20px;" alt="logo">
                             </div>
                             <div class="px-md-5 mx-md-4">
-                                <h3 class="mb-4">Sign Up</h3>
+                                <h3 class="mb-4">Começa a criar festas!</h3>
                             </div>
                         </div>
                     </div>
                     <div class="row g-0">
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <div class="card-body p-md-5 mx-md-4">
-
                                 <form method="post">
                                     {% csrf_token %}
-
                                     <div data-mdb-input-init class="form-outline mb-4">
-                                        <label class="form-label" for="form2Example11">Nome</label>
+                                        <label class="form-label" for="form2Example15">Email da Organização</label>
+                                        {{form_criador.email_organizacao.errors}}
+                                        {{form_criador.email_organizacao}}
+                                    </div>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label" for="form2Example15">Nome do Responsável</label>
                                         {{form_criador.username.errors}}
                                         {{form_criador.username}}
                                     </div>
-
                                     <div data-mdb-input-init class="form-outline mb-4">
-                                        <label class="form-label" for="form2Example12">Data de Nascimento</label>
-                                        {{form_criador.data_nascimento.errors}}
-                                        {{form_criador.data_nascimento}}
-                                    </div>
-
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <label class="form-label" for="form2Example13">sexo</label>
-                                        {{form_criador.sexo.errors}}
-                                        {{form_criador.sexo}}
-                                    </div>
-
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <label class="form-label" for="form2Example14">E-mail</label>
-                                        {{form_criador.email.errors}}
-                                        {{form_criador.email}}
-                                    </div>
-
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <label class="form-label" for="form2Example15">Número de Telemóvel</label>
-                                        {{form_criador.n_telemovel.errors}}
-                                        {{form_criador.n_telemovel}}
-                                    </div>
-
-                                </form>
-
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="card-body p-md-5 mx-md-4">
-                                <form method="post">
-
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <label class="form-label" for="form2Example15">Organizacao</label>
+                                        <label class="form-label" for="form2Example15">Organização</label>
                                         {{form_criador.organizacao.errors}}
                                         {{form_criador.organizacao}}
                                     </div>
-
                                     <div data-mdb-input-init class="form-outline mb-4">
                                         <label class="form-label" for="form2Example15">Cargo</label>
                                         {{form_criador.cargo.errors}}
                                         {{form_criador.cargo}}
                                     </div>
-
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <label class="form-label" for="form2Example16">Password</label>
-                                        {{form_criador.password1.errors}}
-                                        {{form_criador.password1}}
-                                    </div>
-
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <label class="form-label" for="form2Example17">Confirmar Password</label>
-                                        {{form_criador.password2.errors}}
-                                        {{form_criador.password2}}
-                                    </div>
-
                                     <div class="text-center pt-1 mb-1 pb-1">
                                         <button data-mdb-button-init data-mdb-ripple-init
                                             class="btn btn-primary btn-block fa-lg color-custom mb-3 custom-button"
-                                            type="button" value="Cadastrar">Sign In</button>
-                                    </div>
-
-                                    <div class="text-center pt-1 mb-1 pb-1">
-                                        <p>Já tens uma conta? <a class="text-muted" href="{% url 'logar_usuario' %}">Faz
-                                                login aqui!</a>
-                                        </p>
-                                    </div>
-                                    <div class="text-center pt-1 mb-1 pb-1">
-                                        <p>Não queres ser criador de festas? <a class="text-muted" href="{% url 'cadastrar_usuario' %}">Faz
-                                                o registo aqui!</a>
-                                        </p>
+                                            type="button" value="Cadastrar">Ser Criador</button>
                                     </div>
 
                                 </form>
