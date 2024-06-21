@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load meus_filtros %}
 
 {% block titulo %}
 Registo de Novo Criador de Festas
@@ -26,32 +27,35 @@ Registo de Novo Criador de Festas
                             <div class="card-body p-md-5 mx-md-4">
                                 <form method="post">
                                     {% csrf_token %}
-                                    <div data-mdb-input-init class="form-outline mb-4">
+                                    <div data-mdb-input-init class="form-group mb-4">
                                         <label class="form-label" for="form2Example15">Email da Organização</label>
+                                        <br>
                                         {{form_criador.email_organizacao.errors}}
-                                        {{form_criador.email_organizacao}}
+                                        {{form_criador.email_organizacao|addclass:'form-control'}}
                                     </div>
-                                    <div data-mdb-input-init class="form-outline mb-4">
+                                    <div data-mdb-input-init class="form-group mb-4">
                                         <label class="form-label" for="form2Example15">Nome do Responsável</label>
+                                        <br>
                                         {{form_criador.username.errors}}
-                                        {{form_criador.username}}
+                                        {{form_criador.username|addclass:'form-control'}}
                                     </div>
-                                    <div data-mdb-input-init class="form-outline mb-4">
+                                    <div data-mdb-input-init class="form-group mb-4">
                                         <label class="form-label" for="form2Example15">Organização</label>
+                                        <br>
                                         {{form_criador.organizacao.errors}}
-                                        {{form_criador.organizacao}}
+                                        {{form_criador.organizacao|addclass:'form-control'}}
                                     </div>
-                                    <div data-mdb-input-init class="form-outline mb-4">
+                                    <div data-mdb-input-init class="form-group mb-4">
                                         <label class="form-label" for="form2Example15">Cargo</label>
+                                        <br>
                                         {{form_criador.cargo.errors}}
-                                        {{form_criador.cargo}}
+                                        {{form_criador.cargo|addclass:'form-control'}}
                                     </div>
                                     <div class="text-center pt-1 mb-1 pb-1">
                                         <button data-mdb-button-init data-mdb-ripple-init
                                             class="btn btn-primary btn-block fa-lg color-custom mb-3 custom-button"
-                                            type="button" value="Cadastrar">Ser Criador</button>
+                                            type="submit" value="Cadastrar">Ser Criador</button>
                                     </div>
-
                                 </form>
                             </div>
                         </div>
@@ -61,5 +65,4 @@ Registo de Novo Criador de Festas
         </div>
     </div>
 </section>
-
 {% endblock conteudo %}
